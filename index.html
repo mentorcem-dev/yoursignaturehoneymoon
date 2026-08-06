@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Your Signature Honeymoon | Lüks Seyahat Deneyimleri</title>
+    <meta name="description"
+        content="Your Signature Honeymoon: Dünyanın en seçkin destinasyonlarına özel, kişiselleştirilmiş lüks seyahat deneyimleri.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Fonts (Black Tomato Style) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Animation (AOS & Lenis) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        light: '#ffffff',
+                        graytext: '#b0b0b0',
+                        accent: '#c5a059' /* Muted Gold */
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Smooth Parallax */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Custom Button */
+        .btn-luxury {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 40px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-luxury:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* Image Hover Zoom */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom {
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .group:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Lenis Native Scroll Adjustments */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+            width: 100vw;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar (Transparent & Minimal) -->
+    <nav class="fixed w-full z-50 py-8 px-8 md:px-16 flex justify-between items-center transition-all duration-500 bg-gradient-to-b from-black/80 to-transparent"
+        id="navbar">
+        <a href="#" class="block hover:opacity-80 transition-opacity">
+            <img src="img/logo.jpg" class="h-10 md:h-14 lg:h-20 object-contain rounded drop-shadow-lg"
+                alt="Your Signature Honeymoon">
+        </a>
+
+        <div class="hidden md:flex gap-10 text-xs font-bold tracking-[0.2em] uppercase">
+            <a href="#destinations" class="nav-link hover:text-gray-300 transition">Destinasyonlar</a>
+            <a href="#experiences" class="nav-link hover:text-gray-300 transition">Deneyimler</a>
+            <a href="#journal" class="nav-link hover:text-gray-300 transition">Dergi</a>
+            <a href="#contact" class="nav-link hover:text-gray-300 transition">İletişim</a>
+        </div>
+
+        <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+
+        <a href="#contact" class="hidden md:block btn-luxury text-xs">Seyahatinizi Tasarlayın</a>
+    </nav>
+
+    <!-- Hero Section (Cinematic Video Feel) -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden" id="hero">
+        <!-- Background Image (Simulating Video) -->
+        <div class="absolute inset-0 z-0 bg-black">
+            <img src="img/hero.jpg" class="w-full h-full object-cover opacity-60" id="hero-img"
+                style="transform: scale(1.0);">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl" data-aos="fade-up" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-8xl font-serif mb-8 leading-tight">
+                Dünyayı <span class="italic font-light">Farklı</span> Görün
+            </h1>
+            <p
+                class="text-gray-200 text-sm md:text-base font-light tracking-[0.2em] uppercase mb-12 max-w-2xl mx-auto leading-loose">
+                Sıradanlığın ötesinde, size özel tasarlanmış, ömür boyu unutamayacağınız imza niteliğinde lüks seyahat
+                deneyimleri.
+            </p>
+
+            <!-- Search Bar (Style of Black Tomato) -->
+            <div class="max-w-2xl mx-auto relative group">
+                <input type="text" placeholder="Nereye gitmek istersiniz?"
+                    class="w-full bg-transparent border-b border-white/50 py-4 text-center text-xl md:text-2xl font-serif placeholder-white/50 focus:outline-none focus:border-white transition-colors text-white">
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition"><i
+                        class="fas fa-arrow-right text-2xl"></i></button>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-[10px] tracking-widest uppercase writing-vertical">Keşfet</span>
+            <div class="w-[1px] h-16 bg-white"></div>
+        </div>
+    </header>
+
+    <!-- Intro Text (Minimalist) -->
+    <section class="py-32 px-6 bg-dark text-center">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <p class="text-accent text-xs font-bold tracking-[0.3em] uppercase mb-8">Felsefemiz</p>
+            <h2 class="text-3xl md:text-5xl font-serif leading-snug mb-8" data-aos-delay="100">
+                "Bizim için lüks; sadece beş yıldızlı bir otel veya birinci sınıf bir uçuş değildir. <br> <span
+                    class="italic text-gray-400">Gerçek lüks, sizin karakterinizi yansıtan, en ince detayına kadar
+                    'imzanızı' taşıyan o eşsiz andır.</span>"
+            </h2>
+            <p class="text-graytext font-light leading-relaxed max-w-2xl mx-auto text-lg" data-aos-delay="200">
+                Biz, paket turlar satmıyoruz; hayatınızın en özel yolculuğunu, sizin hikayenize uygun bir sanat eserine
+                dönüştürüyoruz. Çünkü biliyoruz ki; her aşk eşsizdir ve her yolculuk bu eşsizliği hak eder.
+            </p>
+        </div>
+    </section>
+
+    <!-- Destinations (Asymetric Grid) -->
+    <section id="destinations" class="py-20 px-4 md:px-12 bg-dark">
+        <div class="text-center mb-24 max-w-3xl mx-auto px-4">
+            <h2 class="text-accent text-3xl md:text-4xl font-serif italic mb-6">THE SIGNATURE COLLECTION</h2>
+            <p class="text-white text-lg font-light leading-relaxed">
+                Dünyanın her köşesini değil; sadece her sokağına, her gün batımına ve her detayına bizzat hakim
+                olduğumuz o özel coğrafyaları sunuyoruz.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 pb-16">
+            <!-- Item 1 (Large) -->
+            <div class="group cursor-pointer relative" data-aos="fade-up">
+                <div class="img-zoom-container aspect-[4/5] md:aspect-[3/4]">
+                    <img src="img/dest1.png" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="mt-6">
+                    <span class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Ruhun Ve Doğanın Dansı</span>
+                    <h3 class="text-3xl font-serif mt-2 group-hover:italic transition-all">BALİ</h3>
+                    <p class="text-graytext text-sm mt-3 font-light max-w-sm">Ubud'un tropikal ormanlarında sadece size
+                        özel bir arınma ritüeli ve okyanus kıyısındaki kayalıklarda, yıldızların altında bir akşam
+                        yemeği. Bali'yi herkes bilir, biz size "saklı" Bali'yi yaşatırız.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 (Offset) -->
+            <div class="group cursor-pointer relative md:mt-32" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-zoom-container aspect-[4/5] md:aspect-[3/4]">
+                    <img src="img/dest2.png" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="mt-6">
+                    <span class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Zamanın Durduğu Mistik
+                        Miras</span>
+                    <h3 class="text-3xl font-serif mt-2 group-hover:italic transition-all">AL ULA</h3>
+                    <p class="text-graytext text-sm mt-3 font-light max-w-sm">Binlerce yıllık kaya oluşumlarının
+                        arasında, modern lüksün zirvesinde bir çöl safarisi ve sadece size ait bir kanyon akşamı. Antik
+                        tarihin içinde, sessizliğin lüksüyle tanışın.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="group cursor-pointer relative" data-aos="fade-up">
+                <div class="img-zoom-container aspect-[16/9]">
+                    <img src="img/dest3.png" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="mt-6">
+                    <span class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Bembeyaz Bir Rüya</span>
+                    <h3 class="text-3xl font-serif mt-2 group-hover:italic transition-all">BORACAY</h3>
+                    <p class="text-graytext text-sm mt-3 font-light max-w-sm">Dünyanın en iyi kumsallarında, turkuaz bir
+                        denizin ortasında özel yelkenliyle gün batımı seyri. Denizin ve güneşin en saf hali, en özel
+                        anlarınız için.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="group cursor-pointer relative md:mt-32" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-zoom-container aspect-[3/4]">
+                    <img src="img/dest4.png" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="mt-6">
+                    <span class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Sonsuz Mavilikte
+                        Mahremiyet</span>
+                    <h3 class="text-3xl font-serif mt-2 group-hover:italic transition-all">MALDİVLER</h3>
+                    <p class="text-graytext text-sm mt-3 font-light max-w-sm">Su üzerindeki villanızda okyanusla
+                        uyanırken, ıssız bir kum adasında sadece ikinize özel bir piknik deneyimi. Standartların
+                        ötesinde bir izolasyon ve huzur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-20 max-w-3xl mx-auto px-4 text-gray-300 font-light leading-relaxed">
+            <p class="mb-6">Uzmanlık alanımız olan bu seçkin rotalar, portföyümüzün sadece bir parçası. Sizin ruhunuza
+                hitap eden o eşsiz noktayı bulmak için tüm dünyayı bir tuval gibi kullanıyoruz.</p>
+            <p class="text-accent text-lg italic">Haritaların ötesinde, sizin için henüz yazılmamış hikayeler var.
+                Dünyanın herhangi bir köşesini 'imzanıza' dönüştürmeye hazır mısınız?</p>
+        </div>
+    </section>
+
+    <!-- Experiences (Full Width Parallax) -->
+    <section id="experiences" class="py-32 relative">
+        <div class="absolute inset-0 z-0">
+            <img src="img/video-cover.jpg" class="w-full h-full object-cover opacity-60 fixed-bg">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <p class="text-accent text-xs font-bold tracking-[0.3em] uppercase mb-4">THE SIGNATURE EXPERIENCE</p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Bir Yolculuktan <span
+                        class="italic">Fazlası</span>, <br> Size Özel Bir Sanat Eseri.</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-serif text-white mb-2">KİŞİSEL BİR BAŞYAPIT <span
+                                class="text-accent font-sans text-sm tracking-widest block mt-1 uppercase">"Size Özel,
+                                Sizinle Sınırlı"</span></h4>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed">
+                            "Her aşk eşsizdir ve bu yolculuğun başlangıcı da aynı özgünlüğü hak eder. Your Signature
+                            olarak biz, standart paketleri ve tekrarlanan rotaları tamamen devre dışı bırakıyoruz.
+                            Transferinizdeki ikram tercihinizden, otelinizdeki yastık seçiminize kadar her unsuru, sizin
+                            öncelikleriniz etrafında yeniden kurguluyoruz. Sonuç; daha önce kimse tarafından
+                            deneyimlenmemiş ve bir daha asla aynısı yaşanmayacak, sadece size ait bir yolculuk. Biz
+                            seyahat rehberlerinin yazdıklarını değil, sizin hayallerinizdeki detayları hayata
+                            geçiriyoruz. Çünkü sizin imzanız, bizim ilhamımızdır."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-[500px] w-full mt-12 md:mt-0" data-aos="fade-left">
+                <img src="img/exp1.jpg"
+                    class="absolute top-0 right-0 w-3/4 h-64 object-cover rounded-sm border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] z-10 transition-transform duration-700 hover:scale-[1.03] hover:z-30 cursor-crosshair delay-100"
+                    data-aos="fade-up">
+                <img src="img/exp2.jpg"
+                    class="absolute bottom-0 left-0 w-3/4 h-80 object-cover rounded-sm border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] z-20 transition-transform duration-700 hover:scale-[1.03] hover:z-30 cursor-crosshair">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us (Minimal List) -->
+    <section class="py-32 bg-dark px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 text-center md:text-left">
+            <div data-aos="fade-up" data-aos-delay="0">
+                <i class="fas fa-gem text-4xl text-accent mb-6"></i>
+                <h3 class="text-2xl font-serif mb-4">Akıllı Lüks</h3>
+                <p class="text-accent font-bold tracking-widest uppercase text-xs mb-4">Optimum Değer, Maksimum Konfor
+                </p>
+                <p class="text-graytext font-light text-sm leading-relaxed">Kişiye özel tasarımın ulaşılamaz bir maliyet
+                    olduğu yanılgısını ortadan kaldırıyoruz. Global ağımız ve ayrıcalıklı otel ortaklıklarımız
+                    sayesinde, bu ultra-lüks detayları en optimum fiyatlandırma ile tek bir çatı altında topluyoruz.
+                    Dağınık planların karmaşasını, uzmanlığımızla 'özel bir paket' haline getirerek size hem zaman hem
+                    de değer kazandırıyoruz.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-user-tie text-4xl text-accent mb-6"></i>
+                <h3 class="text-2xl font-serif mb-4">Kesintisiz Destek</h3>
+                <p class="text-accent font-bold tracking-widest uppercase text-xs mb-4">Görünmez Bir El Her An Yanınızda
+                </p>
+                <p class="text-graytext font-light text-sm leading-relaxed">Siz sadece anın tadını çıkarın diye biz arka
+                    planda bir saat gibi çalışıyoruz. Yolculuğunuzun başladığı andan evinize döndüğünüz dakikaya kadar,
+                    tüm süreçleri 7/24 yöneten ve her türlü talebinize anında çözüm üreten kişisel deneyim danışmanı
+                    hizmetimizle, yolculuğunuzun her aşamasında 'Signature' dokunuşunu hissedeceksiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-32 bg-[#1a1a1a] text-center border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6" data-aos="zoom-in">
+            <span class="text-xs font-bold tracking-[0.3em] text-gray-500 uppercase mb-6 block">Yeni Bir Hikaye
+                Başlatın</span>
+            <h2 class="text-4xl md:text-6xl font-serif mb-12">Bir Sonraki Seyahatinizi <br> Planlayalım</h2>
+
+            <form
+                onsubmit="event.preventDefault(); window.open('https://wa.me/905302312947?text=Merhaba, özel bir seyahat planlamak istiyorum.', '_blank');"
+                class="max-w-md mx-auto space-y-6">
+                <input type="email" placeholder="E-Posta Adresiniz"
+                    class="w-full bg-transparent border-b border-gray-600 py-3 text-center text-white focus:border-white focus:outline-none transition placeholder-gray-600">
+                <button class="btn-luxury w-full mt-8">Talebi Gönder</button>
+            </form>
+
+            <div class="mt-16 flex justify-center gap-8 text-gray-500 text-sm tracking-widest uppercase">
+                <span>+90 530 231 29 47</span>
+                <span>info@izmirturizm.com</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 px-6 border-t border-white/10 text-gray-500 text-xs">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start">
+                <img src="img/logo.jpg" class="h-10 md:h-12 object-contain" alt="Your Signature Honeymoon">
+            </div>
+            <div class="flex gap-8 tracking-widest uppercase">
+                <a href="#" class="hover:text-white transition">Instagram</a>
+                <a href="#" class="hover:text-white transition">Facebook</a>
+                <a href="#" class="hover:text-white transition">Linkedin</a>
+            </div>
+            <div class="tracking-widest">
+                &copy; 2026 YOUR SIGNATURE HONEYMOON. <br> DESIGNED BY REKLAMATIC.AI
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Smooth Scrolling with Lenis
+        const lenis = new Lenis({
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Synchronize AOS with Lenis
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Simple Parallax Effect on Hero
+        const heroImg = document.getElementById('hero-img');
+        lenis.on('scroll', (e) => {
+            const scroll = e.animatedScroll;
+            if (window.scrollY < window.innerHeight) {
+                heroImg.style.transform = `translateY(${scroll * 0.4}px) scale(${1 + scroll * 0.0005})`;
+            }
+        });
+
+        AOS.init({
+            duration: 1500,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black', 'py-4', 'shadow-lg');
+                nav.classList.remove('bg-gradient-to-b', 'py-8');
+            } else {
+                nav.classList.remove('bg-black', 'py-4', 'shadow-lg');
+                nav.classList.add('bg-gradient-to-b', 'py-8');
+            }
+        });
+    </script>
+</body>
+
+</html>
